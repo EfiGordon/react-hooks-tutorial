@@ -19,3 +19,8 @@ So the basic app structure is:
 
 
 Note: the IngredientForm component is using React.memo, which means that the component will be re-rendered only if its props will change, so basiclly in the initial mode <IngredientForm /> it will never re-rendered because it has no props.
+
+
+<blockquote>
+        <p>For example.</p>
+</blockquote>
