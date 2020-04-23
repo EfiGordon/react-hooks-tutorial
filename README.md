@@ -11,11 +11,11 @@ As far as i know the standard today is to use react hooks instead of split the a
 ----------------------------------------------------------------
 So the basic app structure is:
 
-*   index.js
-*       App.js
-*           components/Ingredeints/Ingrediens.js
-*                    <IngredientForm />
-*                     <Search />
+*       index.js
+*           App.js
+*               components/Ingredeints/Ingrediens.js
+*                       <IngredientForm />
+*                       <Search />
 
 
 Note: the IngredientForm component is using React.memo, which means that the component will be re-rendered only if its props will change, so basiclly in the initial mode <IngredientForm /> it will never re-rendered because it has no props.
