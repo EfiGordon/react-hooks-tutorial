@@ -1,5 +1,4 @@
-
-DISCLAIMER: this mini-project is based on Maximillian's React [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/l).
+This mini-project is based on Maximillian's React [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/l).
 
 Note: React hooks supported in version > 16.
 
