@@ -11,10 +11,10 @@ the basic app structure is:
    * index.js
         * App.js
             * components/Ingredeints/Ingrediens.js
-                *   <IngredientForm />
-                *   <Search />
+                *   IngredientForm 
+                *   Search 
      
-Note: the `IngredientForm` component is using React.memo, which means that the component will be re-rendered only if its props will change, so basiclly in the initial mode <IngredientForm /> it will never re-rendered because it has no props.
+Note: the `IngredientForm` component is using React.memo, which means that the component will be re-rendered only if its props will change, so basiclly in the initial mode IngredientForm  it will never re-rendered because it has no props.
 
 ```
 const IngredientForm = React.memo(props => {
