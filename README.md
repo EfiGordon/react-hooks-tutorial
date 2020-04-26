@@ -60,8 +60,45 @@ useEffect(() => {
 },[])
 ```
 
+## useCallback()
+OK so we are moving one step deeper in understanding to React hooks concept. 
+
+So our ```Ingredients Component``` contains the following line:
+```
+  const filterdIngredientsHandler = filteredIngredients => {
+    setUserIngredients(filteredIngredients);
+  };
+...
+<Search onLoadIngredients={filterdIngredientsHandler} />
+```
+
+
+and the ```Search``` component has a `useEffect` like the following:
+
+```
+useEffect(() => {
+// http get request
+},[onLoadIngredients])
+```
+
+It means that when we render the `Ingredients` component it will render the `Search` component and it will execute the `filterdIngredientsHandler` and because we use there the `setUserIngredients` which is the useState function it will re-render the `Ingredients` component and we have here an **infinite loop**...
+to AVOID the we will use useCallback:
+
+```
+  const filterdIngredientsHandler = useCallback(filteredIngredients => {
+    setUserIngredients(filteredIngredients);
+  }, [setUserIngredients]);
+```
+
+which means that the filterdIngredientsHandler will be executed only if the setUserIngredients will be changed.
+
+
+
+
+
+
 
 
 
 References: 
-*   Maximillian's React [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/).
+*   Maximilian's React [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/).
