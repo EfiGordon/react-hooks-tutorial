@@ -63,4 +63,5 @@ useEffect(() => {
 
 
 
-I have been inpsired for those notes by Maximillian's React [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/).
+References: 
+*   Maximillian's React [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/).

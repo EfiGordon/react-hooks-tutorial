@@ -7,8 +7,9 @@ const Search = React.memo(props => {
   const [enteredFilter, setEnteredFilter] = useState('');
   const { onLoadIngredients } = props;
   const inputRef = useRef();
+
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       if (enteredFilter === inputRef.current.value) {
         const query = enteredFilter.length === 0 ? '' : `?orderBy="title"&equalTo="${enteredFilter}"`;
         fetch('https://react-hooks-97ab7.firebaseio.com/ingredients.json' + query)
@@ -26,6 +27,11 @@ const Search = React.memo(props => {
           })
       }
     }, 500);
+
+    return () => { //cleanup funcyion that will run before the next execution or before the function unmounted.
+      clearTimeout(timer);
+    }
+
   }, [enteredFilter, onLoadIngredients, inputRef]);
 
   return (
